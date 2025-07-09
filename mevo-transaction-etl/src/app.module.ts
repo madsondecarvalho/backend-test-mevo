@@ -3,6 +3,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TransactionsModule } from './transactions/transactions.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { TransactionEntity } from './transactions/entities/transaction.entity';
 
 @Module({
   imports: [
@@ -14,7 +15,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       username: 'mevo',
       password: 'mevo',
       database: 'mevo',
-      entities: [],
+      entities: [TransactionEntity],
       synchronize: true,
     })
   ],

@@ -1,12 +1,17 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { Entity, PrimaryColumn } from 'typeorm';
 
-@Entity()
-export class Transaction {
+@Entity('transactions')
+export class TransactionEntity {
 
-    @PrimaryGeneratedColumn()
-    id: number;
+    @PrimaryColumn('varchar')
+    from: string;
 
-    @Column()
-    firstName: number;
+    @PrimaryColumn('varchar')
+    to: string;
 
+    @PrimaryColumn('bigint')
+    amount: number;
+
+    @PrimaryColumn('varchar')
+    import_id: string;
 }
